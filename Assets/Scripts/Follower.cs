@@ -5,15 +5,36 @@ using UnityEngine;
 public class Follower : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float distanceFromObject;
+    [SerializeField] private float speedRotation = 100;
+    [SerializeField] private float distanceFromObject = 1;
+    [SerializeField] private float minZoom = 1;
+    [SerializeField] private float maxZoom = 1;
+    [SerializeField] private float sensitive = 1;
+
+
+    private Vector3 offset;
+
+    private void Start()
+    {
+        offset = transform.position - target.position;
+        transform.LookAt(target.position);
+    }
 
     private void Update()
     {
-        transform.LookAt(target);
-        Vector3 auxPos = target.position - transform.position;
-        auxPos.Normalize();
-        auxPos *= 1/distanceFromObject;
-        transform.position = auxPos;
+        if (Input.GetMouseButton(1))
+        {
+            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speedRotation, Vector3.up) * offset;
+            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * speedRotation, Vector3.right) * offset;
+        }
+
+        distanceFromObject += Input.GetAxis("Mouse ScrollWheel") * -sensitive;
+        distanceFromObject = Mathf.Clamp(distanceFromObject, minZoom, maxZoom);
+
+        transform.position = target.position + offset * distanceFromObject;
+
+        transform.LookAt(target.position);
+
     }
 
 }
