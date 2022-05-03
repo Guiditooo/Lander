@@ -34,6 +34,7 @@ public class Follower : MonoBehaviour
         transform.position = target.position + offset * distanceFromObject;
 
         transform.LookAt(target.position);
+        //transform.forward = target
 
     }
 

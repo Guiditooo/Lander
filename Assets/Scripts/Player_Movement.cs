@@ -9,6 +9,9 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float frontalRotationSpeed;
     [SerializeField] private float jumpSpeed;
 
+    [SerializeField] private float correctionThreshold = 1;
+    [SerializeField] private float correctionSpeed = 2;
+
     private bool sideRotationInput = false;
     private bool frontalRotationInput = false;
     private bool horizontalInput = false;
@@ -21,6 +24,10 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
+        if (sideRotationInput) sideRotationInput = false;
+        if (frontalRotationInput) frontalRotationInput = false;
+        if (horizontalInput) horizontalInput = false;
+
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(0, -horizontalSpeed * Time.deltaTime, 0); //Sin fuerzas, el avion deja de girar cuando se suelta el input
@@ -35,20 +42,45 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0, 0, -sideRotationSpeed * Time.deltaTime);
+            sideRotationInput = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, 0, sideRotationSpeed * Time.deltaTime);
+            sideRotationInput = true;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
             transform.Rotate(frontalRotationSpeed * Time.deltaTime, 0, 0);
+            frontalRotationInput = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.Rotate(-frontalRotationSpeed * Time.deltaTime, 0, 0);
+            frontalRotationInput = true;
         }
+
+
+        if (!horizontalInput)
+        {
+            float auxCondition = Vector3.Angle(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), new Vector3(transform.forward.x, 0, transform.forward.z));
+
+            if (Mathf.Abs(auxCondition) > correctionThreshold)
+            {
+                if (transform.rotation.eulerAngles.y >= 0 && transform.rotation.eulerAngles.y < 180)
+                {
+                    Debug.Log("Corrijo pa la izquierda");
+                    transform.Rotate(Vector3.up * -correctionSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    Debug.Log("Corrijo pa la derecha");
+                    transform.Rotate(Vector3.up * correctionSpeed * Time.deltaTime);
+                }
+            }
+        }
+
 
     }
 
@@ -60,19 +92,4 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-
-    /*
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Q))
-            rb.AddTorque(new Vector3(0, -horizontalSpeed * Time.deltaTime, 0)); //Esto es con fuerzas. El avion sigue girando por mas que no haya input
-        if (Input.GetKey(KeyCode.E))
-            rb.AddTorque(new Vector3(0, horizontalSpeed * Time.deltaTime, 0));
-        
-        if (Input.GetKey(KeyCode.D))
-            rb.AddTorque(new Vector3(0, 0, -sideRotationSpeed * Time.deltaTime)); 
-        if (Input.GetKey(KeyCode.A))
-            rb.AddTorque(new Vector3(0, 0, sideRotationSpeed * Time.deltaTime));
-    }
-    */
 }
