@@ -66,16 +66,18 @@ public class Player_Movement : MonoBehaviour
         {
             float auxCondition = Vector3.Angle(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), new Vector3(transform.forward.x, 0, transform.forward.z));
 
-            if (Mathf.Abs(auxCondition) > correctionThreshold)
+            if (auxCondition > correctionThreshold)
             {
-                if (transform.rotation.eulerAngles.y >= 0 && transform.rotation.eulerAngles.y < 180)
+                Vector3 camAngle = Camera.main.transform.eulerAngles;
+
+                camAngle.y -= transform.rotation.eulerAngles.y;
+             
+                if ((camAngle.y > -180 && camAngle.y < 0) || (camAngle.y > 180)) //LEFT CORRECTION
                 {
-                    Debug.Log("Corrijo pa la izquierda");
                     transform.Rotate(Vector3.up * -correctionSpeed * Time.deltaTime);
                 }
-                else
+                else                                                             //RIGHT CORRECTION
                 {
-                    Debug.Log("Corrijo pa la derecha");
                     transform.Rotate(Vector3.up * correctionSpeed * Time.deltaTime);
                 }
             }
