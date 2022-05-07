@@ -83,6 +83,21 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
+        if (!sideRotationInput)
+        {
+            if (transform.eulerAngles.z > correctionThreshold && transform.eulerAngles.z < 360 - correctionThreshold)
+            {
+                Debug.Log(transform.eulerAngles.z);
+                if (transform.eulerAngles.z < 180) //LEFT CORRECTION
+                {
+                    transform.Rotate(Vector3.forward * -correctionSpeed * Time.deltaTime);
+                }
+                else                               //RIGHT CORRECTION
+                {
+                    transform.Rotate(Vector3.forward * correctionSpeed * Time.deltaTime);
+                }
+            }
+        }
 
     }
 
