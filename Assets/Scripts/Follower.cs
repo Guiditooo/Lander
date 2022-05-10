@@ -25,7 +25,7 @@ public class Follower : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * speedRotation, Vector3.up) * offset;
-            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * speedRotation, Vector3.right) * offset;
+            offset = Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * -speedRotation, Vector3.right) * offset;
         }
 
         distanceFromObject += Input.GetAxis("Mouse ScrollWheel") * -sensitive;

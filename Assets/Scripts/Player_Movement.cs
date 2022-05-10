@@ -61,6 +61,11 @@ public class Player_Movement : MonoBehaviour
             frontalRotationInput = true;
         }
 
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    Debug.Log("Intenta subir.");
+        //    //transform.position += transform.up.normalized * jumpSpeed * Time.deltaTime;
+        //}
 
         if (!horizontalInput)
         {
@@ -119,7 +124,9 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            Debug.Log("Intenta subir.");
             rb.AddForce(transform.up * jumpSpeed);
+            //transform.position += transform.up.normalized * jumpSpeed * Time.deltaTime;
         }
     }
 
