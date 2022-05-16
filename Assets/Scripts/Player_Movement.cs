@@ -61,12 +61,6 @@ public class Player_Movement : MonoBehaviour
             frontalRotationInput = true;
         }
 
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    Debug.Log("Intenta subir.");
-        //    //transform.position += transform.up.normalized * jumpSpeed * Time.deltaTime;
-        //}
-
         if (!horizontalInput)
         {
             float auxCondition = Vector3.Angle(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), new Vector3(transform.forward.x, 0, transform.forward.z));
@@ -124,9 +118,18 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Intenta subir.");
             rb.AddForce(transform.up * jumpSpeed);
-            //transform.position += transform.up.normalized * jumpSpeed * Time.deltaTime;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.tag == "Base")
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                transform.rotation = Quaternion.Euler(transform.up);
+            }
         }
     }
 
