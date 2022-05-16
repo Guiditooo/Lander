@@ -61,7 +61,6 @@ public class Player_Movement : MonoBehaviour
             frontalRotationInput = true;
         }
 
-
         if (!horizontalInput)
         {
             float auxCondition = Vector3.Angle(new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z), new Vector3(transform.forward.x, 0, transform.forward.z));
@@ -120,6 +119,17 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpSpeed);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.tag == "Base")
+        {
+            if (Input.GetKey(KeyCode.R))
+            {
+                transform.rotation = Quaternion.Euler(transform.up);
+            }
         }
     }
 
