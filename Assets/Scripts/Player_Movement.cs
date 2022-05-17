@@ -62,6 +62,9 @@ public class Player_Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
+            if(rb.constraints==RigidbodyConstraints.FreezePosition)
+                rb.constraints = RigidbodyConstraints.None;
+
             rb.AddForce(transform.up * jumpSpeed * Time.deltaTime);
             //transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
         }
@@ -121,12 +124,17 @@ public class Player_Movement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if(collision.collider.tag == "Base")
+        if(collision.collider.tag == "Nest")
         {
-            if (Input.GetKey(KeyCode.R))
-            {
-                transform.rotation = Quaternion.Euler(transform.up);
-            }
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Egg")
+        {
+            other.GetComponent<Egg>().GrabEgg();
         }
     }
 

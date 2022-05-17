@@ -14,6 +14,16 @@ public class MenuController : MonoBehaviour
     private void Awake()
     {
         actualPanel = startingPanel;
+
+        //CanvasGroup[] cgList = GetComponentsInChildren<CanvasGroup>();
+
+        foreach (CanvasGroup canvasGroup in GetComponentsInChildren<CanvasGroup>())
+        {
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+            canvasGroup.interactable = false;
+        }
+
         StartPanel(startingPanel);
     }
 
@@ -27,6 +37,7 @@ public class MenuController : MonoBehaviour
         actualPanel.blocksRaycasts = true;
         actualPanel.interactable = true;
     }
+
 
     public void CloseGame()
     {
