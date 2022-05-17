@@ -34,7 +34,8 @@ public class Follower : MonoBehaviour
         transform.position = target.position + offset * distanceFromObject;
 
         transform.LookAt(target.position);
-        //transform.forward = target
+
+        //transform.eulerAngles = new Vector3(target.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z);
 
     }
 

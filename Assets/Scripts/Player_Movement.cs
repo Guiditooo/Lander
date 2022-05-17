@@ -60,6 +60,10 @@ public class Player_Movement : MonoBehaviour
             transform.Rotate(-frontalRotationSpeed * Time.deltaTime, 0, 0);
             frontalRotationInput = true;
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
+        }
 
         if (!horizontalInput)
         {
@@ -112,14 +116,6 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-    }
-
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rb.AddForce(transform.up * jumpSpeed);
-        }
     }
 
     private void OnCollisionStay(Collision collision)
