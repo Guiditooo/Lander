@@ -62,7 +62,8 @@ public class Player_Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
+            rb.AddForce(transform.up * jumpSpeed * Time.deltaTime);
+            //transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
         }
 
         if (!horizontalInput)
