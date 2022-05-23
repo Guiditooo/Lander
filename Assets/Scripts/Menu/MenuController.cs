@@ -27,6 +27,11 @@ public class MenuController : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void StartPanel(CanvasGroup newPanel)
     {
         StartCoroutine(PanelChange(newPanel));
