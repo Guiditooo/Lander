@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1143858697556600784}
   - component: {fileID: 1143858697556600799}
   - component: {fileID: 1143858697556600798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Starting Nest
   m_TagString: Nest
   m_Icon: {fileID: 0}
