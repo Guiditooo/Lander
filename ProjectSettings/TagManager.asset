@@ -7,6 +7,7 @@ TagManager:
   - Base
   - Egg
   - Nest
+  - Planet
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - Water
   - UI
   - StartBase
-  - 
-  - 
-  - 
-  - 
+  - Egg
+  - Nest
+  - Player
+  - Planet
   - 
   - 
   - 

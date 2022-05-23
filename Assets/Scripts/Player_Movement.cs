@@ -17,6 +17,7 @@ public class Player_Movement : MonoBehaviour
     private bool horizontalInput = false;
 
     private Rigidbody rb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,6 +25,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
+
         if (sideRotationInput) sideRotationInput = false;
         if (frontalRotationInput) frontalRotationInput = false;
         if (horizontalInput) horizontalInput = false;
