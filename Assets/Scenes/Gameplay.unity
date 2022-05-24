@@ -468,6 +468,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 00
       objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
 --- !u!1001 &79337223
@@ -568,6 +576,14 @@ PrefabInstance:
     - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
       propertyPath: m_text
       value: /
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 25.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
@@ -674,6 +690,14 @@ PrefabInstance:
     - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
       propertyPath: m_text
       value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
@@ -1349,6 +1373,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Catched Eggs
       objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 38.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
 --- !u!1001 &367187461
@@ -1910,6 +1942,14 @@ PrefabInstance:
     - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
       propertyPath: m_text
       value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
@@ -2866,7 +2906,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1112583423
 MonoBehaviour:
@@ -3868,6 +3908,14 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 39.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
 --- !u!4 &1683878833 stripped
@@ -3917,7 +3965,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 240, y: 80}
+  m_SizeDelta: {x: 300, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1705980836
 MonoBehaviour:
@@ -3940,8 +3988,8 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -4139,6 +4187,14 @@ PrefabInstance:
     - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
       propertyPath: m_text
       value: /
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 25.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
@@ -4608,7 +4664,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2035794619
 CanvasRenderer:
@@ -4774,6 +4830,14 @@ PrefabInstance:
     - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
       propertyPath: m_text
       value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_fontSize
+      value: 41.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2446317192939642046, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df337a435b032d4e9b910c03bd5f57a, type: 3}
