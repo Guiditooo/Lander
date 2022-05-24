@@ -9,7 +9,7 @@ public class CrashChecker : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         Debug.Log("Choque con: " + col.name, col);
-
+        if(col.tag == "Planet")
         OnPlayerDeath();
 
     }

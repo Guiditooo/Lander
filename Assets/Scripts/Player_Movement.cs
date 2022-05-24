@@ -17,7 +17,6 @@ public class Player_Movement : MonoBehaviour
     private bool horizontalInput = false;
 
     private Rigidbody rb;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -123,21 +122,18 @@ public class Player_Movement : MonoBehaviour
         }
 
     }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if(collision.collider.tag == "Nest")
-        {
-            rb.constraints = RigidbodyConstraints.FreezePosition;
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Egg")
         {
             other.GetComponent<Egg>().GrabEgg();
+        } 
+        if (other.tag == "Nest")
+        {
+            other.GetComponent<Nest>().DiscoverNest();
         }
     }
+
+
 
 }
