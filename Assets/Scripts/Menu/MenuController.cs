@@ -27,11 +27,6 @@ public class MenuController : MonoBehaviour
 
     }
 
-    private void Start()
-    {
-        Time.timeScale = 1;
-    }
-
     public void StartPanel(CanvasGroup newPanel)
     {
         StartCoroutine(PanelChange(newPanel));
@@ -42,7 +37,7 @@ public class MenuController : MonoBehaviour
         float t = 0;
         while (t<1)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             panel.alpha = t;
             yield return null;
         }
@@ -56,7 +51,7 @@ public class MenuController : MonoBehaviour
         float t = 1;
         while (t > 0)
         {
-            t -= Time.deltaTime;
+            t -= Time.unscaledDeltaTime;
             panel.alpha = t;
             yield return null;
         }
